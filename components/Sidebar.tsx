@@ -24,7 +24,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   const handleLogout = async () => {
-    Cookies.remove("token");
+    Cookies.remove("__ACCESS-TOKEN");
     router.push("/login");
   };
 

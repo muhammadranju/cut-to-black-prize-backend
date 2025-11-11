@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -36,11 +35,10 @@ export default function LoginPage() {
       });
       console.log(data.data);
       if (data.success) {
-        // Cookies.set("__ACCESS-TOKEN", data.data);
+        router.push("/dashboard");
         Cookies.set("__ACCESS-TOKEN", data.data);
         setIsLoading(false);
         toast.success("Login successful");
-        router.push("/dashboard");
       }
       console.log(data);
     } catch (error: any) {
@@ -52,7 +50,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (Cookies.get("__ACCESS-TOKEN")) {
-      router.push("/dashboard");
+      window.location.href = "/dashboard";
     }
   }, []);
 
