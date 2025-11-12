@@ -59,9 +59,8 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Welcome Back</CardTitle>
-          <CardDescription>
-            Sign in to your account to continue managing your submissions and
-            invitations.
+          <CardDescription className="w-4/5">
+            Sign in and continue managing all submissions and invitations.
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -122,6 +121,10 @@ export default function LoginPage() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </CardFooter>
+          <div className="flex flex-col justify-start text-neutral-400 text-sm  px-5 pt-3 ">
+            <span>email: user@gmail.com</span>
+            <span>password: 12345678</span>
+          </div>
         </form>
       </Card>
     </div>
