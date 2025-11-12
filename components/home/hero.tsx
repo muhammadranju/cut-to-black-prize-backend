@@ -233,7 +233,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-full h-screen bg-cover bg-center flex items-center justify-center overflow-hidden -mb-[550px] lg:mb-0">
+    <div className="relative w-full h-screen bg-cover bg-center flex items-center justify-center overflow-hidden -mb-[550px] lg:mb-14">
       <div className="absolute inset-0 lg:bg-black/40 z-10 pointer-events-none "></div>
       {/*  */}
       {/* Loading Spinner */}
@@ -256,7 +256,7 @@ export default function Hero() {
         >
           <iframe
             ref={iframeRef}
-            src="https://player.vimeo.com/video/278235942?autoplay=1&background=1"
+            src="https://player.vimeo.com/video/1135124618?autoplay=1&background=1"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
             style={{

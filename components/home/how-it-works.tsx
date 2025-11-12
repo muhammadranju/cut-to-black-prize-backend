@@ -22,9 +22,9 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="w-full  lg:py-20 px-6">
+    <section className="w-full  py-10 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-white mb-16">
+        <h2 className="text-4xl font-bold text-center text-white mb-8">
           How It Works
         </h2>
 

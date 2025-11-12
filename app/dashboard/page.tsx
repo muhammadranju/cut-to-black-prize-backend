@@ -95,12 +95,12 @@ export default function DashboardHome() {
           icon={<FileText className="h-4 w-4 text-muted-foreground" />}
         />
         <StatsCard
-          title="Total Submissions"
+          title="Total Requests"
           value={totalCount?.totalRequests}
           icon={<FileText className="h-4 w-4 text-muted-foreground" />}
         />
         <StatsCard
-          title="Total Submissions"
+          title="Total Payments"
           value={totalCount?.totalPayments}
           icon={<FileText className="h-4 w-4 text-muted-foreground" />}
         />

@@ -27,9 +27,9 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="w-full bg-black py-20 px-6">
+    <section className="w-full bg-black py-10 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">
+        <h2 className="text-4xl font-bold text-center mb-8">
           Why Choose <span className="text-yellow-500">Us</span>
         </h2>
 
