@@ -1,115 +1,3 @@
-// "use client";
-// import ContentWrapper from "@/components/content-wrapper";
-// import { Button } from "@/components/ui/button";
-// import { Checkbox } from "@/components/ui/checkbox";
-// import { Input } from "@/components/ui/input";
-// import { useRouter } from "next/navigation";
-// import { useState } from "react";
-
-// export default function SubmitPage() {
-//   const [invitationCode, setInvitationCode] = useState("");
-//   const [agreedToTerms, setAgreedToTerms] = useState(false);
-//   const router = useRouter();
-
-//   const handleSubmit = () => {
-//     if (invitationCode && agreedToTerms) {
-//       console.log("Submitting code:", invitationCode);
-//     }
-//   };
-
-//   return (
-//     <ContentWrapper>
-//       <div className="w-full max-w-3xl mx-auto space-y-12 border border-gray-700 rounded-lg p-8 md:p-12 bg-[#1a1a1a]">
-//         {/* Header */}
-//         <div className="text-center">
-//           <h1 className="text-white md:text-2xl lg:text-3xl font-bold text-xl tracking-wide">
-//             INVITATION CODE - ENTER YOUR CODE TO PROCEED
-//           </h1>
-//         </div>
-
-//         {/* Invitation Code Form */}
-//         <div className="space-y-6">
-//           <div className="space-y-3">
-//             <label className="text-white text-lg block">
-//               Invitation Code<span className="text-red-500">*</span>
-//             </label>
-//             <Input
-//               type="text"
-//               placeholder="Enter Your Invitation Code"
-//               value={invitationCode}
-//               onChange={(e) => setInvitationCode(e.target.value)}
-//               className="w-full h-12 bg-transparent border border-gray-600 text-white placeholder:text-gray-500 rounded-lg px-4"
-//             />
-//           </div>
-
-//           {/* Terms Checkbox */}
-//           <div className="flex items-center space-x-2">
-//             <Checkbox
-//               id="terms"
-//               checked={agreedToTerms}
-//               onCheckedChange={(checked) =>
-//                 setAgreedToTerms(checked as boolean)
-//               }
-//               className="border-gray-600 data-[state=checked]:bg-white data-[state=checked]:text-black"
-//             />
-//             <label
-//               htmlFor="terms"
-//               className="text-white text-sm cursor-pointer"
-//             >
-//               I agree to Terms & Conditions and Privacy Policy.
-//               <span className="text-red-500">*</span>
-//             </label>
-//           </div>
-
-//           {/* Submit Button */}
-//           <div className="flex justify-center pt-6">
-//             <Button
-//               onClick={handleSubmit}
-//               className="max-w-sm w-full h-12 font-bold text-black"
-//             >
-//               SUBMIT INVITE CODE
-//             </Button>
-//           </div>
-//         </div>
-
-//         {/* Middle Section */}
-//         <div className="text-center"></div>
-
-//         {/* Action Buttons */}
-//         <div className="flex flex-col items-center pt-8 px-4 max-w-4xl mx-auto">
-//           <h2 className="text-white text-xl md:text-2xl font-bold tracking-wide text-center mb-6">
-//             CLICK HERE TO ENTER CUT TO BLACK PRIZE
-//           </h2>
-
-//           <div className="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-2xl">
-//             <Button
-//               onClick={() => router.push("/request-invitation")}
-//               className="w-full sm:w-auto px-8 h-12 bg-transparent border border-gray-600 text-white hover:bg-gray-800 hover:border-white transition-all rounded-lg text-base font-normal"
-//             >
-//               REQUEST INVITE
-//             </Button>
-
-//             <Button
-//               onClick={() => router.push("/lost-invitation")}
-//               className="w-full sm:w-auto px-8 h-12 bg-transparent border border-gray-600 text-white hover:bg-gray-800 hover:border-white transition-all rounded-lg text-base font-normal"
-//             >
-//               LOST INVITATION CODE
-//             </Button>
-//           </div>
-//         </div>
-
-//         {/* Footer Text */}
-//         <div className="text-center pt-4">
-//           <p className="text-gray-400 text-sm max-w-2xl mx-auto">
-//             payment screen (if applicable) appears After code verification
-//             upload instructions will be sent after payment is verified.
-//           </p>
-//         </div>
-//       </div>
-//     </ContentWrapper>
-//   );
-// }
-
 "use client";
 import ContentWrapper from "@/components/content-wrapper";
 import { Button } from "@/components/ui/button";
@@ -249,16 +137,96 @@ export default function SubmitPage() {
 
   return (
     <ContentWrapper>
-      <div className="w-full max-w-3xl mx-auto space-y-12 border border-gray-700 rounded-lg p-8 md:p-12 bg-[#1a1a1a]">
-        {/* Header */}
-        <div className="text-center">
+      <div className="w-full max-w-4xl mx-auto  border border-gray-700 rounded-lg p-8 md:p-12 bg-[#1a1a1a]">
+        <div className="text-center mb-10">
           <h1 className="text-white md:text-2xl lg:text-3xl font-bold text-xl tracking-wide">
-            INVITATION CODE - ENTER YOUR CODE TO PROCEED
+            Enter the Contest <br /> Contest Entry Begins November 15, 2025
           </h1>
         </div>
+        <p>
+          <strong>Overview</strong>
+          <br />
+          <br />
+          Cut to Black Prize is a small, invitation-only screenwriting
+          competition for writers who value craft and real access. We keep the
+          field tight so every invited script receives a deep, blind read from
+          working producers, writers, and analysts. One champion earns 10,000
+          USD, a trip to Hollywood, and a scheduled producer meeting.
+          <br />
+          <br />
+          <strong>Why invitation only</strong>
+          <br />
+          <br />
+          A curated field raises the signal and the stakes. Fewer entries means
+          deeper reads, faster decisions, and a clear path from submission to
+          outcome. If you received an invitation, you are in a limited group
+          selected for potential and readiness.
+          <br />
+          <br />
+          <strong>What the winner receives</strong>
+          <br />
+          <br />
+          • 10,000 USD cash
+          <br />
+          • Round-trip airfare to Los Angeles and hotel lodging
+          <br />
+          • A scheduled in-person producer meeting
+          <br />
+          <br />
+          • Industry exposure to working producers and development executives
+          <br />
+          <br />
+          <strong>How it works</strong>
+          <br />
+          <br />
+          • Blind judging in multiple rounds across all genres and formats
+          <br />
+          • One submission per entrant unless authorized in writing
+          <br />
+          • Standard PDF script upload with title page only and no identifying
+          information
+          <br />
+          • Clear timelines for quarterfinalists, semifinalists, finalists, and
+          winner
+          <br />
+          <br />
+          <strong>Entry fee per script</strong>
+          <br />
+          <br />
+          • Early: 100 USD
+          <br />
+          • Regular: 120 USD
+          <br />
+          • Late: 130 USD
+          <br />
+          • Extended: 150 USD
+          <br />
+          <br />
+          See for{" "}
+          <Link href="/contest-rules" className="text-blue-500 underline">
+            Contest Rules{" "}
+          </Link>
+          details
+          <br />
+          <br />
+          <strong>Click Enter Now below.</strong>
+          <br />
+          <br />
+          Enter your access code now and complete contest entry. Codes expire,
+          and you may need to request a new one. Availability is not guaranteed.
+          <br />
+          <br />
+          If you do not have a code, request one here:{" "}
+          <Link href="/request-invitation" className="text-blue-500 underline">
+            Request Invitation
+          </Link>
+          <br />
+          <br />
+        </p>
+        {/* Header */}
 
         {/* Invitation Code Form */}
-        <div className="space-y-6">
+        <div className="space-y-6 mt-10">
           <div className="space-y-3">
             <label className="text-white text-lg block">
               Invitation Code<span className="text-red-500">*</span>
@@ -295,11 +263,11 @@ export default function SubmitPage() {
                 I agree to{" "}
                 <Link
                   href="/terms-conditions"
-                  className=" hover:underline underline-offset-2 hover:text-yellow-500"
+                  className=" underline underline-offset-2 text-blue-500"
                 >
-                  Terms & Conditions.
-                </Link>
-                <span className="text-red-500">*</span>
+                  Terms and Conditions
+                </Link>{" "}
+                by requesting invite.
               </label>
             </div>
             {errors.terms && (
@@ -330,7 +298,7 @@ export default function SubmitPage() {
         <div className="text-center"></div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col items-center pt-8 px-4 max-w-4xl mx-auto">
+        <div className="flex flex-col items-center pt-10 px-4 max-w-4xl mx-auto">
           <h2 className="text-white text-xl font-bold tracking-wide text-center mb-6">
             CLICK HERE FOR REQUEST INVITE CODE OR LOST INVITATION CODE
           </h2>

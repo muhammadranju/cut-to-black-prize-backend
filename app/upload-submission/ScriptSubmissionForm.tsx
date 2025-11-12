@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Loader2, Upload } from "lucide-react";
+import { ArrowLeft, Loader2, Upload } from "lucide-react";
 import ContentWrapper from "@/components/content-wrapper";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
@@ -52,7 +52,10 @@ export default function ScriptSubmissionForm() {
     file: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [userData, setUserData] = useState<{ fullName?: string; email?: string } | null>(null);
+  const [userData, setUserData] = useState<{
+    fullName?: string;
+    email?: string;
+  } | null>(null);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -118,100 +121,6 @@ export default function ScriptSubmissionForm() {
       }));
     }
   };
-
-  // const handleSubmit = async () => {
-  //   // Reset errors
-  //   const newErrors: FormErrors = {
-  //     fullName: "",
-  //     email: "",
-  //     scriptTitle: "",
-  //     logline: "",
-  //     genre: "",
-  //     scriptLength: "",
-  //     file: "",
-  //   };
-
-  //   // Validate Full Name
-  //   if (!formData.fullName.trim()) {
-  //     newErrors.fullName = "Please enter your full name";
-  //   }
-
-  //   // Validate Email
-  //   if (!formData.email.trim()) {
-  //     newErrors.email = "Please enter your email address";
-  //   } else if (!validateEmail(formData.email)) {
-  //     newErrors.email = "Please enter a valid email address";
-  //   }
-
-  //   // Validate Script Title
-  //   if (!formData.scriptTitle.trim()) {
-  //     newErrors.scriptTitle = "Please enter the script title";
-  //   }
-
-  //   // Validate Logline
-  //   if (!formData.logline.trim()) {
-  //     newErrors.logline = "Please enter the logline";
-  //   }
-
-  //   // Validate Genre
-  //   if (!formData.genre) {
-  //     newErrors.genre = "Please select a genre";
-  //   }
-
-  //   // Validate Script Length
-  //   if (!formData.scriptLength) {
-  //     newErrors.scriptLength = "Please select the script length";
-  //   }
-
-  //   // Validate File
-  //   if (!formData.file) {
-  //     newErrors.file = "Please upload your script PDF";
-  //   }
-
-  //   setErrors(newErrors);
-
-  //   // Check if there are any errors
-  //   const hasErrors = Object.values(newErrors).some((error) => error !== "");
-
-  //   if (!hasErrors) {
-  //     try {
-  //       const { data } = await axios.post(
-  //         `${API_URL}/submission`,
-  //         {
-  //           scriptTitle: formData.scriptTitle,
-  //           logline: formData.logline,
-  //           genre: formData.genre,
-  //           lengthCategory: formData.scriptLength,
-  //           pdf: formData.file,
-  //           inviteCode: Cookies.get("__INVITE-CODE"),
-  //         },
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${Cookies.get("__ACCESS-TOKEN")}`,
-  //           },
-  //         }
-  //       );
-
-  //       console.log(data);
-  //     } catch (error: any) {
-  //       console.log(error);
-
-  //       toast.error(error.response.data.message || "Something went wrong");
-  //     }
-
-  //     console.log("Form submitted:", formData);
-  //     // setFormData({
-  //     //   fullName: "",
-  //     //   email: "",
-  //     //   scriptTitle: "",
-  //     //   logline: "",
-  //     //   genre: "",
-  //     //   scriptLength: "",
-  //     //   file: null,
-  //     // });
-  //     // Submit form logic here
-  //   }
-  // };
 
   const handleSubmit = async () => {
     // Reset errors
@@ -319,17 +228,48 @@ export default function ScriptSubmissionForm() {
     <ContentWrapper>
       {/* Header */}
 
-      <Card className="w-full max-w-3xl mx-auto  rounded-lg p-8 md:p-12 border border-gray-700 ">
+      <Card className="w-full max-w-4xl mx-auto  rounded-lg p-8 md:p-12 border border-gray-700 ">
         <div className="text-center space-y-3">
           <h1 className="text-white md:text-2xl lg:text-3xl font-bold text-xl tracking-wide">
-            UPLOAD YOUR SCREENPLAY
+            Cut to Black Prize Invitation Request
           </h1>
-          <p className="text-neutral-400 text-sm text-center w-4/5 mx-auto">
-            Please fill out the form below to upload your screenplay. Once
-            submitted, you will receive an invitation code that you can use to
-            submit your screenplay.
-          </p>
         </div>
+        <p>
+          Cut to Black Prize is a small, curated competition for writers who
+          value craft and real access. Because invitations are limited, we ask
+          prospective entrants to complete a short pre-screening questionnaire.
+          It helps us confirm fit, keep the field tight, and ensure every
+          invited script receives a deep, blind read from working producers and
+          analysts.
+          <br />
+          <br />
+          The questionnaire focuses on the essentials only: your logline, format
+          and page count, a brief background snapshot, and your goals for the
+          next year. It takes just a few minutes and directly informs our
+          invitation decisions. If you were referred or are part of our
+          mentorship community, this is the fastest path to the submission link.
+          <br />
+          <br />
+          Ready to be considered for an invitation? Complete the pre-screening
+          questionnaire now.
+          <br />
+          <br />
+        </p>
+        <p>
+          <strong>Note:</strong>{" "}
+          <small>
+            You may follow up after submitting this form by emailing
+          </small>{" "}
+          <br />
+          <strong>invites@cuttoblackprize.com</strong>{" "}
+          <small>
+            with any additional information that may help
+            <br /> our evaluation. Keep the email under 500 words. Emails over
+            500 words will be automatically deleted. Do not include attachments
+            or links.
+          </small>
+        </p>
+
         <div className="space-y-6">
           {/* Full Name */}
           <div className="space-y-2">
@@ -501,7 +441,37 @@ export default function ScriptSubmissionForm() {
             {errors.file && (
               <p className="text-red-500 text-sm mt-1">{errors.file}</p>
             )}
+            {/* Terms Checkbox */}
+            <div className="flex items-center justify-between gap-2 mt-3  ">
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  className="border-gray-600 data-[state=checked]:bg-white data-[state=checked]:text-black"
+                />
+                <label
+                  htmlFor="terms"
+                  className="text-white text-sm cursor-pointer "
+                >
+                  I agree to{" "}
+                  <Link
+                    href="/terms-conditions"
+                    className=" underline underline-offset-2 text-blue-500"
+                  >
+                    Terms and Conditions
+                  </Link>{" "}
+                  by requesting invite.
+                </label>
+              </div>
+            </div>
           </div>
+
+          <small className="text-neutral-400 text-sm my-2 w-1/2 mx-auto">
+            By submitting this form, you are consenting to receive marketing
+            emails from Call Sheet Media. You can revoke your consent to receive
+            emails at any time by using the Safe Unsubscribe® link, found at the
+            bottom of every email.
+          </small>
 
           <div className="flex flex-col items-center justify-center pt-2 space-y-3">
             <Button
@@ -519,7 +489,7 @@ export default function ScriptSubmissionForm() {
                 "SUBMIT SCREENPLAY"
               )}
             </Button>
-            <p className="text-gray-400 text-sm mt-1">
+            {/* <p className="text-gray-400 text-sm mt-1">
               By submitting, you agree to our{" "}
               <Link
                 href="/terms-conditions"
@@ -527,8 +497,14 @@ export default function ScriptSubmissionForm() {
               >
                 Terms and Conditions
               </Link>
-            </p>
+            </p> */}
           </div>
+          <p>
+            Please verify your entries before submitting. Submit only one invite
+            request. By applying, you agree to all terms and conditions of Cut
+            to Black Prize and Call Sheet Media LLC. Cut to Black Prize is
+            sponsored by Call Sheet Media, LLC.
+          </p>
         </div>
       </Card>
     </ContentWrapper>

@@ -129,10 +129,7 @@ const NavLinks = [
     name: "Past Winners",
     href: "/past-winners",
   },
-  {
-    name: "About",
-    href: "/about",
-  },
+
   {
     name: "Dashboard",
     href: "/dashboard",

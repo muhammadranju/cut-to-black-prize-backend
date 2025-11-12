@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { Checkbox } from "@radix-ui/react-checkbox";
 
 export default function RequestInviteForm() {
   const [formData, setFormData] = useState({
@@ -125,13 +126,27 @@ export default function RequestInviteForm() {
 
   return (
     <ContentWrapper>
-      <div className="w-full max-w-3xl mx-auto border border-gray-700 rounded-lg p-8 md:p-12 bg-[#1a1a1a]">
+      <div className="w-full max-w-4xl mx-auto border border-gray-700 rounded-lg p-8 md:p-12 bg-[#1a1a1a]">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center">
           <h1 className="text-white md:text-2xl lg:text-3xl font-bold text-xl tracking-wide">
-            REQUEST INVITE CODE
+            Request an Invitation
           </h1>
         </div>
+        <p className="mb-12 mt-5 text-neutral-100 text-base">
+          Cut to Black Prize is invitation only. If you would like to be
+          considered, complete a short request form. We keep the field small so
+          every invited script receives a deep, blind read from working
+          producers and analysts.
+          <br />
+          <br />
+          We review requests regularly will and notify you of your status as
+          soon as possible. If invited, you will receive a private submission
+          link and deadlines.
+          <br />
+          <br />
+          Start your request now and put your best work forward.
+        </p>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-8">
@@ -203,7 +218,28 @@ export default function RequestInviteForm() {
             {errors.interested && (
               <p className="text-red-500 text-sm mt-1">{errors.interested}</p>
             )}
-            <div className="flex items-center justify-end gap-2 -mt-3  hover:text-yellow-500">
+            {/* Terms Checkbox */}
+            <div className="flex items-center justify-between gap-2 -mt-3  ">
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  className="border-gray-600 data-[state=checked]:bg-white data-[state=checked]:text-black"
+                />
+                <label
+                  htmlFor="terms"
+                  className="text-white text-sm cursor-pointer "
+                >
+                  I agree to{" "}
+                  <Link
+                    href="/terms-conditions"
+                    className=" underline underline-offset-2 text-blue-500"
+                  >
+                    Terms and Conditions
+                  </Link>{" "}
+                  by requesting invite.
+                </label>
+              </div>
               <Link href="/submit" className="flex items-center gap-2 text-xs">
                 <ArrowLeft className=" w-4 h-4 -mr-2" /> You already have an
                 invite code?
@@ -227,15 +263,6 @@ export default function RequestInviteForm() {
                 "REQUEST INVITE"
               )}
             </Button>
-            <p className="text-gray-400 text-sm mt-1">
-              By submitting, you agree to our{" "}
-              <Link
-                href="/terms-conditions"
-                className="text-yellow-500 hover:text-yellow-400 underline font-medium"
-              >
-                Terms and Conditions
-              </Link>
-            </p>
           </div>
         </form>
       </div>

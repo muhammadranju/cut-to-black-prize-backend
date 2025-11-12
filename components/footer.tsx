@@ -106,15 +106,15 @@ export default function Footer() {
                   href="/terms-conditions"
                   className="text-gray-400 hover:text-yellow-500 transition text-sm inline-block"
                 >
-                  Terms & Conditions
+                  Terms and Conditions
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/privacy"
                   className="text-gray-400 hover:text-yellow-500 transition text-sm inline-block"
                 >
-                  About
+                  Privacy
                 </Link>
               </li>
             </ul>
@@ -122,30 +122,6 @@ export default function Footer() {
 
           {/* Social Media Icons */}
           <div className="flex items-center justify-center sm:justify-start lg:justify-center gap-4 sm:gap-6 col-span-1 sm:col-span-2 lg:col-span-1">
-            {/* <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-              <Image
-                width={80}
-                height={80}
-                src="./imdb.png"
-                alt="IMDB"
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
-              />
-              <Image
-                width={80}
-                height={80}
-                src="./linkdin.png"
-                alt="LinkedIn"
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
-              />
-              <Image
-                width={80}
-                height={80}
-                src="./facebook.png"
-                alt="Facebook"
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
-              />
-            </div> */}
-
             <div className="grid grid-cols-3 gap-4 sm:gap-6">
               <a
                 href="https://twitter.com/cuttoblack"

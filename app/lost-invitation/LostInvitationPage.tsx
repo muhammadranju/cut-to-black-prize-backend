@@ -111,7 +111,7 @@ export default function InvitationCodePage() {
 
   return (
     <ContentWrapper>
-      <div className="w-full max-w-3xl mx-auto space-y-12 border border-gray-700 rounded-lg p-8 md:p-12 bg-[#1a1a1a]">
+      <div className="w-full max-w-4xl mx-auto space-y-12 border border-gray-700 rounded-lg p-8 md:p-12 bg-[#1a1a1a]">
         {/* Header */}
         <div className="text-center">
           <h1 className="text-white md:text-2xl lg:text-3xl font-bold text-xl tracking-wide">
@@ -133,10 +133,37 @@ export default function InvitationCodePage() {
               className="w-full h-12 bg-transparent border border-gray-600 text-white placeholder:text-gray-500 rounded-lg px-4"
             />
             {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
-            <div className="flex items-center justify-end gap-2 -mt-3  hover:text-yellow-500">
+            {/* <div className="flex items-center justify-end gap-2 -mt-3  hover:text-yellow-500">
               <Link href="/submit" className="flex items-center gap-2 text-xs">
                 <ArrowLeft className=" w-4 h-4 -mr-2" /> Back to the form to
                 submit your screenplay
+              </Link>
+            </div> */}
+            {/* Terms Checkbox */}
+            <div className="flex items-center justify-between gap-2 -mt-3  ">
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  className="border-gray-600 data-[state=checked]:bg-white data-[state=checked]:text-black"
+                />
+                <label
+                  htmlFor="terms"
+                  className="text-white text-sm cursor-pointer "
+                >
+                  I agree to{" "}
+                  <Link
+                    href="/terms-conditions"
+                    className=" underline underline-offset-2 text-blue-500"
+                  >
+                    Terms and Conditions
+                  </Link>{" "}
+                  by requesting invite.
+                </label>
+              </div>
+              <Link href="/submit" className="flex items-center gap-2 text-xs">
+                <ArrowLeft className=" w-4 h-4 -mr-2" /> You already have an
+                invite code?
               </Link>
             </div>
           </div>
