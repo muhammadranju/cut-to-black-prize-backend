@@ -35,7 +35,7 @@ export default function LoginPage() {
       });
       console.log(data.data);
       if (data.success) {
-        router.push("/dashboard");
+        window.location.href = "/dashboard";
         Cookies.set("__ACCESS-TOKEN", data.data);
         setIsLoading(false);
         toast.success("Login successful");
